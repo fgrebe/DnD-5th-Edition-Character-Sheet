@@ -62,9 +62,6 @@ div.mainContent h2 {
 
 div.mainContent input[type=text]{
 	padding: 2px;
-	
-	text-align: center;
-	font-size: 200%;
 
 	background-color: #FFEBD1;
 	border: 1px solid #865920;
@@ -90,10 +87,13 @@ div.mainContent table th {
 	text-align: left;
 
 	background-color: #D3A872;
-	/*border: 1px solid #865920;*/
 	border-collapse: collapse;
 }
 
 div.mainContent table tr:nth-child(odd) {
 	background-color: #FFEBD1;
+}
+
+div.mainContent table img {
+	vertical-align: middle;
 }

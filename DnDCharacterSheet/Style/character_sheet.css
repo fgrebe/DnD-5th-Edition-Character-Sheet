@@ -1,3 +1,10 @@
 div.mainContent table.infoTable {
 	float: left;
 }
+
+div.mainContent input[type=text].ability {
+	width: 50px;
+
+	text-align: center;
+	font-size: 200%;
+}

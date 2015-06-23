@@ -71,6 +71,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="Images\character_sheet.png" />
+    <Content Include="Images\plus.png" />
+    <Content Include="Images\proficient.png" />
     <Content Include="Pages\CharacterSheet.aspx" />
     <Content Include="Scripts\app.js" />
     <Content Include="Scripts\charSvc.js" />

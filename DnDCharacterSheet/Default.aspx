@@ -12,7 +12,7 @@
       <tr ng-repeat="c in characters">
         <td>{{c.Name}}</td>
         <td>{{c.Class.Name}}</td>
-        <td><a ng-href="/char/{{c.CharacterId}}">Open Character Sheet</a></td>
+        <td><a ng-href="/char/{{c.CharacterId}}"><img src="<%=ResolveClientUrl("~/Images/character_sheet.png")%>"/></a></td>
       </tr>
     </table>
   </div>
