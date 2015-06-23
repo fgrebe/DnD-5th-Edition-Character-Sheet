@@ -1,14 +1,23 @@
-﻿angular.module('dndCharacterSheet.controllers', [])
-	.controller('CharacterCtrl', function ($scope, DnDSvc) {
+﻿angular.module("dndCharacterSheet.controllers")
+	.controller("CharacterCtrl", function ($scope, $q, DnDSvc) {
 
-	  $scope.LoadCharacter = function (characterId) {
-	    DnDSvc.charSvc.GetCharacter(characterId, $scope.LoadCharacterSuccess, $scope.error);
+		$scope.LoadCharacterSheet = function (characterId) {
+			var promise = $q(function(resolve, reject) {
+				DnDSvc.charSvc.GetArmors($scope.LoadArmorsSuccess, $scope.error);
+			});
+
+			promise.then(DnDSvc.charSvc.GetCharacter(characterId, $scope.LoadCharacterSuccess, $scope.error));
 	  }
 
 	  $scope.LoadCharacterSuccess = function (response) {
-	    $scope.character = response.Value;
+	  	$scope.character = response.Value;
 	    $scope.$apply();
 	  }
+
+		$scope.LoadArmorsSuccess = function(response) {
+			$scope.armors = response.Value;
+			$scope.$apply();
+		}
 
 	  $scope.error = function (response) {
 	    alert("error!");
@@ -40,4 +49,14 @@
 	    $scope.$apply();
 	  }
 
+		$scope.OnArmorChanged = function() {
+			DnDSvc.charSvc.SetArmor($scope.character.CharacterId, $scope.character.ArmorId, $scope.SetArmorSuccess, $scope.error);
+		}
+
+		$scope.SetArmorSuccess = function(response) {
+			$scope.character.Armor = response.Value.Armor;
+			$scope.character.Armor.ArmorId = response.Value.Armor.ArmorId;
+			$scope.character.AC = response.Value.AC;
+			$scope.$apply;
+		}
 	});

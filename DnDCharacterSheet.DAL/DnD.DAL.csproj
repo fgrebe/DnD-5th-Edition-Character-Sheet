@@ -39,10 +39,12 @@
     <Compile Include="DALContext.cs" />
     <Compile Include="Model\Abilities.cs" />
     <Compile Include="Model\Ability.cs" />
+    <Compile Include="Model\Items\Armor.cs" />
     <Compile Include="Model\Character.cs" />
     <Compile Include="Model\Class.cs" />
     <Compile Include="Model\DieEnum.cs" />
     <Compile Include="Model\Enums.cs" />
+    <Compile Include="Model\Items\Item.cs" />
     <Compile Include="Model\Skill.cs" />
   </ItemGroup>
   <ItemGroup>

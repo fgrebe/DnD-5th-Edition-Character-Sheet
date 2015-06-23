@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Linq;
+using DnD.DataAccess.Model.Items;
 
 namespace DnD.DataAccess.Model
 {
@@ -36,6 +37,9 @@ namespace DnD.DataAccess.Model
     public Abilities Abilities { get; set; }
 
     public ICollection<Skill> Skills { get; set; }
+
+		public int? ArmorId { get; set; }
+		public Armor Armor { get; set; }
 
     public Character() { }
 
@@ -103,5 +107,22 @@ namespace DnD.DataAccess.Model
     private void IncreaseHitDice() {
       MaxHitDice = String.Format("{0}{1}", Level, Class.HitDie); 
     }
+
+		public void SetArmor(Armor armor)
+		{
+			Armor = armor;
+			ArmorId = armor.ArmorId;
+			AC = armor.AC;
+
+			switch (armor.Type)
+			{
+				case ArmorType.Light:
+					AC += Abilities.Dexterity.Modifier;
+					break;
+				case ArmorType.Medium:
+					AC += Abilities.Dexterity.Modifier > 2 ? 2 : Abilities.Dexterity.Modifier;
+					break;
+			}
+		}
 	}
 }

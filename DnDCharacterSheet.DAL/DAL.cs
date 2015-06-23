@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using System.Security.Cryptography.X509Certificates;
 using DnD.DataAccess.Model;
+using DnD.DataAccess.Model.Items;
 
 namespace DnD.DataAccess
 {
@@ -20,14 +21,25 @@ namespace DnD.DataAccess
 			}
 		}
 
+		#region Class
+		public static List<Class> GetClasses()
+		{
+			using (var context = new DALContext())
+			{
+				return context.Classes.ToList();
+			}
+		}
+
     public static int AddClass(Class c) {
       using (var context = new DALContext()) {
         context.Classes.Add(c);
         return context.SaveChanges();
       }
     }
+		#endregion
 
-    public static int AddCharacters(Character c) {
+		#region Character
+		public static int AddCharacters(Character c) {
       using (var context = new DALContext()) {
         context.Characters.Add(c);
         return context.SaveChanges();
@@ -62,6 +74,7 @@ namespace DnD.DataAccess
           .Include(a => a.Abilities.Wisdom)
           .Include(a => a.Abilities.Charisma)
           .Include(a => a.Skills)
+					.Include(c => c.Armor)
           .FirstOrDefault<Character>(c => c.CharacterId == characterId);
       }
     }
@@ -88,13 +101,46 @@ namespace DnD.DataAccess
       }
     }
 
-    public static List<Class> GetClasses() {
-      using (var context = new DALContext()) {
-        return context.Classes.ToList();
-      }
-    }
+		public static void UpdateArmor(Character character)
+		{
+			using (var context = new DALContext())
+			{
+				context.Characters.Attach(character);
+				context.Entry(character).State = EntityState.Modified;
+				context.SaveChanges();
+			}
+		}
+		#endregion
 
-    public static int DropDatabase() {
+		#region Items
+
+		public static void AddArmor(Armor armor)
+		{
+			using (var context = new DALContext())
+			{
+				context.Armors.Add(armor);
+				context.SaveChanges();
+			}
+		}
+
+		public static List<Armor> GetArmors()
+		{
+			using (var context = new DALContext())
+			{
+				return context.Armors.ToList();
+			}
+		}
+
+		public static Armor GetArmor(int armorId)
+		{
+			using (var context = new DALContext())
+			{
+				return context.Armors.FirstOrDefault(a => a.ArmorId == armorId);
+			}
+		}
+		#endregion
+
+		public static int DropDatabase() {
       using (var context = new DALContext()) {
         context.Database.Delete();
         return context.SaveChanges();

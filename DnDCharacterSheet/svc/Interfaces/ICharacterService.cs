@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.ServiceModel;
-
+using DnD.DataAccess;
 using DnD.DataAccess.Model;
+using DnD.DataAccess.Model.Items;
 
 namespace DnD.CharacterSheet.Services
 {
@@ -25,5 +26,11 @@ namespace DnD.CharacterSheet.Services
 
     [OperationContract]
     SvcResponse<CharacterUpdateResponse> LevelUp(int characterId, int level);
+
+	  [OperationContract]
+	  SvcResponse<List<Armor>> GetArmors();
+
+	  [OperationContract]
+	  SvcResponse<ArmorUpdateResponse> SetArmor(int characterId, int armorId);
 	}
 }

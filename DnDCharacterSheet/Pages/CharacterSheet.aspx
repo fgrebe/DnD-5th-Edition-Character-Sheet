@@ -6,7 +6,7 @@
 <asp:Content ID="mainContent" ContentPlaceHolderID="mainContent" runat="server">
 	<script src="<%=ResolveClientUrl("~/Scripts/controllers/characterCtrl.js")%>" type="text/javascript"></script>
 
-	<div ng-controller="CharacterCtrl" ng-init="LoadCharacter(<%= CharacterId %>)">
+	<div ng-controller="CharacterCtrl" ng-init="LoadCharacterSheet(<%= CharacterId %>)">
 		<h1>{{character.Name}}</h1>
 
 		<table class="infoTable">
@@ -20,7 +20,8 @@
 			</tr>
 			<tr>
 				<th>Level</th>
-				<td>{{character.Level}} <a href="#" ng-click="OnLevelUp(<%= CharacterId %>, character.Level + 1)"><img src="<%= ResolveClientUrl("~/Images/plus.png") %>"/></a>
+				<td>{{character.Level}} <a href="#" ng-click="OnLevelUp(<%= CharacterId %>, character.Level + 1)">
+					<img src="<%= ResolveClientUrl("~/Images/plus.png") %>" /></a>
 			</tr>
 			<tr>
 				<th>Race</th>
@@ -115,7 +116,7 @@
 		</div>
 
 		<div class="f-left">
-			<h2>Skills:</h2>
+			<h2>Skills</h2>
 			<table>
 				<tr>
 					<th></th>
@@ -124,14 +125,28 @@
 					<th>Mod</th>
 				</tr>
 				<tr ng-repeat="s in character.Skills">
-					<td><img ng-if="s.Proficient" src="<%= ResolveClientUrl("~/Images/proficient.png") %>"/><img ng-if="!s.Proficient" src="<%= ResolveClientUrl("~/Images/not_proficient.png") %>"/></td>
+					<td>
+						<img ng-if="s.Proficient" src="<%= ResolveClientUrl("~/Images/proficient.png") %>" /><img ng-if="!s.Proficient" src="<%= ResolveClientUrl("~/Images/not_proficient.png") %>" /></td>
 					<td ng-bind="s.Name"></td>
 					<td ng-bind="'(' + s.Related.Name + ')'"></td>
 					<td class="modifier" ng-bind="CalculateSkillModifier(s)"></td>
 				</tr>
 			</table>
 		</div>
+		<div class="clear"></div>
+		<div>
+			<h2>Equipment</h2>
+			<table>
+				<tr>
+					<th>Armor</th>
+					<td>
+						<select ng-model="character.ArmorId" ng-change="OnArmorChanged()">
+							<option ng-repeat="a in armors" value="{{a.ArmorId}}">{{a.Name}}</option>
+						</select>
+					</td>
+				</tr>
+			</table>
+		</div>
 	</div>
-	<div class="clear"></div>
 
 </asp:Content>

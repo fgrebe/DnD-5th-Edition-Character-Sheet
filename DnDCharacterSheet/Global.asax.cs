@@ -13,7 +13,8 @@ namespace DnD.CharacterSheet
 		protected void Application_Start(object sender, EventArgs e)
 		{
 			RegisterWebServiceRoutes(RouteTable.Routes);
-      RegisterPageRoutes(RouteTable.Routes);
+			RegisterPageRoutes(RouteTable.Routes);
+			RegisterDialogRoutes(RouteTable.Routes);
 		}
 
 		protected void Session_Start(object sender, EventArgs e)
@@ -46,9 +47,15 @@ namespace DnD.CharacterSheet
 
 		}
 
-    private static void RegisterPageRoutes(RouteCollection routes) {
-      routes.MapPageRoute("CharacterSheet", "char/{characterId}", "~/Pages/CharacterSheet.aspx");
-    }
+		private static void RegisterPageRoutes(RouteCollection routes)
+		{
+			routes.MapPageRoute("CharacterSheet", "char/{characterId}", "~/Pages/CharacterSheet.aspx");
+		}
+
+		private static void RegisterDialogRoutes(RouteCollection routes)
+		{
+			routes.MapPageRoute("ArmorDialog", "items/armor", "~/Dialogs/ArmorDialog.aspx");
+		}
 
 		private static void RegisterWebServiceRoutes(RouteCollection routes)
 		{

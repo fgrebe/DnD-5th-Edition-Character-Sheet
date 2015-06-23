@@ -135,6 +135,7 @@
       <DependentUpon>CharacterService.svc</DependentUpon>
     </Compile>
     <Compile Include="svc\Interfaces\ICharacterService.cs" />
+    <Compile Include="svc\Response\ArmorUpdateReponse.cs" />
     <Compile Include="svc\Response\CharacterUpdateResponse.cs" />
     <Compile Include="svc\Response\AbilityUpdateResponse.cs" />
     <Compile Include="svc\ServiceBase.cs" />

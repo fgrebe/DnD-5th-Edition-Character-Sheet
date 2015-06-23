@@ -1,5 +1,6 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
+using DnD.DataAccess.Model.Items;
 
 namespace DnD.DataAccess
 {
@@ -9,6 +10,7 @@ namespace DnD.DataAccess
 	{
 		public DbSet<Class> Classes { get; set; }
 		public DbSet<Character> Characters { get; set; }
+		public DbSet<Armor> Armors { get; set; }
 
 		public DALContext()
 		{		
