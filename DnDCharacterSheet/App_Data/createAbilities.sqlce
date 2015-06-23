@@ -1,0 +1,8 @@
+-- Script Date: 14.06.2015 19:46  - ErikEJ.SqlCeScripting version 3.5.2.49
+CREATE TABLE [Abilities] (
+  [AbilitiesId] INTEGER PRIMARY KEY AUTOINCREMENT
+, [StrengthId] int NOT NULL
+, [DexterityId] int NOT NULL
+, FOREIGN KEY (StrengthId) REFERENCES Ability(AbilityId)
+, FOREIGN KEY (DexterityId) REFERENCES Ability(AbilityId)
+);

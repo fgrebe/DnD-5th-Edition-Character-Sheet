@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DnD.CharacterSheet", "DnDCharacterSheet\DnD.CharacterSheet.csproj", "{9DAB59BC-C634-4CD7-99A4-9C93979A9144}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DnD.DAL", "DnDCharacterSheet.DAL\DnD.DAL.csproj", "{51F0D1F9-5A08-4935-9DB6-6F11820CE2B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DnD.InitializeDB", "DnD.InitializeDB\DnD.InitializeDB.csproj", "{82E52556-750C-4B51-BAEA-8A1DDFB7241B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9DAB59BC-C634-4CD7-99A4-9C93979A9144}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DAB59BC-C634-4CD7-99A4-9C93979A9144}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DAB59BC-C634-4CD7-99A4-9C93979A9144}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DAB59BC-C634-4CD7-99A4-9C93979A9144}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51F0D1F9-5A08-4935-9DB6-6F11820CE2B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51F0D1F9-5A08-4935-9DB6-6F11820CE2B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51F0D1F9-5A08-4935-9DB6-6F11820CE2B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51F0D1F9-5A08-4935-9DB6-6F11820CE2B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82E52556-750C-4B51-BAEA-8A1DDFB7241B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82E52556-750C-4B51-BAEA-8A1DDFB7241B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82E52556-750C-4B51-BAEA-8A1DDFB7241B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82E52556-750C-4B51-BAEA-8A1DDFB7241B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

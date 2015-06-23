@@ -1,0 +1,10 @@
+-- Script Date: 14.06.2015 19:52  - ErikEJ.SqlCeScripting version 3.5.2.49
+CREATE TABLE [Character] (
+  [CharacterId] INTEGER PRIMARY KEY AUTOINCREMENT
+, [Name] nvarchar(100) NOT NULL
+, [Level] int NOT NULL
+, [ClassId] int NOT NULL
+, [AbilitiesId] int NOT NULL
+, FOREIGN KEY (CLassId) REFERENCES Class(ClassId)
+, FOREIGN KEY (AbilitiesId) REFERENCES Abilities(AbilitiesId)
+);

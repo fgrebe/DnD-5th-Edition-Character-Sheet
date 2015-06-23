@@ -1,0 +1,9 @@
+-- Script Date: 21.06.2015 12:47  - ErikEJ.SqlCeScripting version 3.5.2.49
+DROP TABLE [Abilities];
+CREATE TABLE [Abilities] (
+  [AbilitiesId] INTEGER PRIMARY KEY AUTOINCREMENT
+, [Strength_AbilityId] int NOT NULL
+, [Dexterity_AbilityId] int NOT NULL
+, FOREIGN KEY ([Dexterity_AbilityId]) REFERENCES [Ability] ([AbilityId]) ON DELETE NO ACTION ON UPDATE NO ACTION
+, FOREIGN KEY ([Strength_AbilityId]) REFERENCES [Ability] ([AbilityId]) ON DELETE NO ACTION ON UPDATE NO ACTION
+);

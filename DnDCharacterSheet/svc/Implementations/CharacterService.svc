@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="DnD.CharacterSheet.svc.Implementations.CharacterService" CodeBehind="CharacterService.svc.cs" %>
