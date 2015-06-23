@@ -7,7 +7,7 @@
   <div ng-controller="CharacterCtrl" ng-init="LoadCharacter(<%= CharacterId %>)">
     <h1>{{character.Name}}</h1>
     <p>Class: {{character.Class.Name}}</p>
-    <p>Level: {{character.Level}}   <input type="button" ng-click="OnLevelUp(<%= CharacterId %>)" value="Level up"/></p>
+    <p>Level: {{character.Level}}   <input type="button" ng-click="OnLevelUp(<%= CharacterId %>, character.Level + 1)" value="Level up"/></p>
     <p>Proficiency Bonus: {{character.ProficiencyBouns}}</p>
     <p>Player Name: {{character.PlayerName}}</p>
     <p>Hitpoints: {{character.Hitpoints}}</p>

@@ -85,8 +85,8 @@ namespace DnD.DataAccess.Model
       result.Proficient = proficient;
     }
 
-    public void LevelUp() {
-      Level++;
+    public void LevelUp(int level) {
+      Level = level;
       CalculateProficiencyBouns();
       CalculateHitpoints();
       IncreaseHitDice();    

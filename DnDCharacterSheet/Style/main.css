@@ -1,2 +1,99 @@
-﻿body {
+body {
+	width: 100%;
+	background-color: #AD7E42;
+}
+
+div.f-left {
+	float: left;
+}
+
+div.clear {
+	clear: both;
+}
+
+.W25 {
+	width: 25px;
+}
+
+.W50 {
+	width: 50px;
+}
+
+.W100 {
+	width: 100px;
+}
+
+.W150 {
+	width: 150px;
+}
+
+.modifier {
+	padding-right: 10px;
+	
+	text-align: right;
+}
+
+div.mainContent {
+	margin: 10px auto;
+	width: 1200px;
+	
+	padding: 10px;
+	
+	font-family: Verdana;
+	font-size: 14px;
+	
+	background-color: #FAD8AD;
+	border: 2px solid #865920;
+	box-shadow: 4px 4px 10px #222222;
+}
+
+div.mainContent h1 {
+	margin: 0px;
+	
+	padding: 0px;
+}
+
+div.mainContent h2 {
+	margin: 0px;
+	margin-top: 10px;
+	
+	padding: 0px;
+}
+
+div.mainContent input[type=text]{
+	padding: 2px;
+	
+	text-align: center;
+	font-size: 200%;
+
+	background-color: #FFEBD1;
+	border: 1px solid #865920;
+}
+
+div.mainContent table {
+	margin: 5px;
+	
+	border: 1px solid #865920;
+	border-spacing: 0px;
+}
+
+div.mainContent table td,th {
+	margin: 0px;
+	
+	padding: 2px 5px;
+	vertical-align: center;
+	
+	border-collapse: collapse;
+}
+
+div.mainContent table th {
+	text-align: left;
+
+	background-color: #D3A872;
+	/*border: 1px solid #865920;*/
+	border-collapse: collapse;
+}
+
+div.mainContent table tr:nth-child(odd) {
+	background-color: #FFEBD1;
 }

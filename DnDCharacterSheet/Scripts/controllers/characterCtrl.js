@@ -28,8 +28,8 @@
 	    return skill.Related.Modifier + (skill.Proficient ? $scope.character.ProficiencyBonus : 0);
 	  }
 
-	  $scope.OnLevelUp = function (characterId) {
-	    DnDSvc.charSvc.LevelUp(characterId, $scope.LevelUpSuccess, $scope.error);
+	  $scope.OnLevelUp = function (characterId, level) {
+	    DnDSvc.charSvc.LevelUp(characterId, level, $scope.LevelUpSuccess, $scope.error);
 	  }
 
 	  $scope.LevelUpSuccess = function (response) {

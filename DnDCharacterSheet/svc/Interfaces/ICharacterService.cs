@@ -24,6 +24,6 @@ namespace DnD.CharacterSheet.Services
     SvcResponse<AbilityUpdateResponse> UpdateAbilities(int characterId, Abilities ab);
 
     [OperationContract]
-    SvcResponse<CharacterUpdateResponse> LevelUp(int characterId);
+    SvcResponse<CharacterUpdateResponse> LevelUp(int characterId, int level);
 	}
 }

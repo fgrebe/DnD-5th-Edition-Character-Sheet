@@ -41,9 +41,9 @@ namespace DnD.CharacterSheet.Services
       return CreateReponse(new AbilityUpdateResponse { Abilities = character.Abilities, Skills = character.Skills });
     }
 
-    public SvcResponse<CharacterUpdateResponse> LevelUp(int characterId) {
+    public SvcResponse<CharacterUpdateResponse> LevelUp(int characterId, int level) {
       var character = DAL.GetCharacter(characterId);
-      character.LevelUp();
+      character.LevelUp(level);
       DAL.LevelUp(character);
       return CreateReponse(new CharacterUpdateResponse { Hitpoints = character.Hitpoints, Level = character.Level, MaxHitDice = character.MaxHitDice, ProficiencyBonus = character.ProficiencyBonus  });
     }

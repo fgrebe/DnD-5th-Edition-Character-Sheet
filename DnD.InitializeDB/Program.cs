@@ -33,7 +33,7 @@ namespace DnD.InitializeDB {
         PlayerName = "Florentina",
         Note = "Wurmin is fun!",
         Inventory = "Quarterstaff, Arcane Focus, Ring Of Spellstoring, Wand Of The Warmage +2, Spellbook, Kobol's Karnage",
-        Level = 5,
+        Level = 1,
         Alignment = "Chaotic Good",
         Background = "Noble",
         Class = c
@@ -42,7 +42,7 @@ namespace DnD.InitializeDB {
       ch.SetProficient(SkillsEnum.History); 
       ch.SetProficient(SkillsEnum.Insight);
       ch.SetProficient(SkillsEnum.Persuasion);
-      ch.LevelUp(); // make this automated!
+      ch.LevelUp(6); // make this automated!
 
       DAL.AddCharacters(ch);
 
@@ -58,16 +58,16 @@ namespace DnD.InitializeDB {
         PlayerName = "Georg",
         Note = "Wurmin is fun!",
         Inventory = "Dragon Scale Shield, Longsword, Handaxe (x2), Warhammer, Man-O-War (Battleaxe)",
-        Level = 5,
+        Level = 1,
         Alignment = "Lawful Good",
         Background = "Noble (Knight)",
         Class = c
       };
-      ch.SetProficient(SkillsEnum.Arcana);
+      ch.SetProficient(SkillsEnum.Perception);
+      ch.SetProficient(SkillsEnum.Athletics);
       ch.SetProficient(SkillsEnum.History);
-      ch.SetProficient(SkillsEnum.Insight);
       ch.SetProficient(SkillsEnum.Persuasion);
-      ch.LevelUp(); // make this automated!
+      ch.LevelUp(6); // make this automated!
 
       DAL.AddCharacters(ch);
 
@@ -83,7 +83,7 @@ namespace DnD.InitializeDB {
         PlayerName = "Lex",
         Note = "Swoosh!!",
         Inventory = "Scythe",
-        Level = 5,
+        Level = 1,
         Alignment = "Lawful Neutral",
         Background = "???",
         Class = c
@@ -92,12 +92,12 @@ namespace DnD.InitializeDB {
       ch.SetProficient(SkillsEnum.History);
       ch.SetProficient(SkillsEnum.Insight);
       ch.SetProficient(SkillsEnum.Persuasion);
-      ch.LevelUp(); // make this automated!
+      ch.LevelUp(6); // make this automated!
 
       DAL.AddCharacters(ch);
 
       DAL.GetClasses().ForEach(x => Console.WriteLine("Classname: {0} ({1})", x.Name, x.HitDie));
-      DAL.GetCharacters().ForEach(x => Console.WriteLine("Name: {0}, Class: {1}, Player Name: {2}, Proficiency Bonus: {3}", x.Name, x.Class.Name, x.PlayerName, x.Skills.FirstOrDefault(s => s.Name.Equals(SkillsEnum.Arcana.ToName())).Proficient));
+      DAL.GetCharacters().ForEach(x => Console.WriteLine("Name: {0}, Class: {1}, Player Name: {2}, Proficiency Bonus in Arcana: {3}", x.Name, x.Class.Name, x.PlayerName, x.Skills.FirstOrDefault(s => s.Name.Equals(SkillsEnum.Arcana.ToName())).Proficient));
 
       Console.ReadLine();
     }
