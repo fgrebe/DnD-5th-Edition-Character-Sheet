@@ -4,10 +4,10 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Dungeons & Dragons Character Sheet</title>
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
-    <link rel="Stylesheet" href="Style/charactersheet.css" type="text/css" />
+	<title>Dungeons & Dragons Character Sheet</title>
+	<link rel="Stylesheet" href="<%=ResolveClientUrl("~/Style/main.css") %>" type="text/css" />
+	<asp:ContentPlaceHolder ID="head" runat="server">
+	</asp:ContentPlaceHolder>
 </head>
 <body>
 	<script src="<%=ResolveClientUrl("~/Scripts/lib/angular.js")%>" type="text/javascript"></script>
@@ -16,12 +16,13 @@
 	<script src="http://localhost:2208/svc/char/js" type="text/javascript"></script>
 	<script src="<%=ResolveClientUrl("~/Scripts/modules/dndServiceMdl.js")%>" type="text/javascript"></script>
 
-  <form id="form" runat="server">
-		<div ng-app="dndCharacterSheet">
-			<asp:ContentPlaceHolder ID="mainContent" runat="server">
-        
-       </asp:ContentPlaceHolder>
-    </div>
-  </form>
+	<div class="mainContent">
+		<form id="form" runat="server">
+			<div ng-app="dndCharacterSheet">
+				<asp:ContentPlaceHolder ID="mainContent" runat="server">
+				</asp:ContentPlaceHolder>
+			</div>
+		</form>
+	</div>
 </body>
 </html>

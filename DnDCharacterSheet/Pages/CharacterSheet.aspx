@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPages/Site.Master" AutoEventWireup="true" CodeBehind="CharacterSheet.aspx.cs" Inherits="DnD.CharacterSheet.Pages.CharacterSheet" %>
-<asp:Content ID="headsContent" ContentPlaceHolderID="head" runat="server">
+<asp:Content ID="headContent" ContentPlaceHolderID="head" runat="server">
+    <link rel="Stylesheet" href="<%=ResolveClientUrl("~/Style/character_sheet.css") %>" type="text/css" />
 </asp:Content>
 <asp:Content ID="mainContent" ContentPlaceHolderID="mainContent" runat="server">
   <script src="<%=ResolveClientUrl("~/Scripts/controllers/characterCtrl.js")%>" type="text/javascript"></script>

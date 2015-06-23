@@ -94,7 +94,7 @@
     <Content Include="Scripts\lib\MicrosoftAjax.debug.js" />
     <Content Include="Scripts\lib\MicrosoftAjax.js" />
     <Content Include="Scripts\modules\dndServiceMdl.js" />
-    <Content Include="Style\charactersheet.css" />
+    <Content Include="Style\character_sheet.css" />
     <Content Include="Style\main.css" />
     <Content Include="svc\Implementations\CharacterService.svc" />
     <Content Include="Web.config">

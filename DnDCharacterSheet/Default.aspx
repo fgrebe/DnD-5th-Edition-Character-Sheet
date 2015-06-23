@@ -2,32 +2,10 @@
 <asp:Content ID="contentHead" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="contentMain" ContentPlaceHolderID="mainContent" runat="server">
-	<%--<asp:ListView ID="lstCharacters" runat="server">
-		<LayoutTemplate>
-			<table>
-				<tbody>
-					<tr runat="server" id="itemPlaceholder" />
-				</tbody>
-			</table>
-		</LayoutTemplate>
-		<ItemTemplate>
-			<tr runat="server">
-				<td runat="server">
-					<asp:Label runat="server" Text='<%#Eval("Name") %>' />
-				</td>
-        <td runat="server">
-          <asp:Label runat="server" Text='<%#Eval("Class.Name") %>' />
-        </td>
-        <td runat="server">
-          <asp:Label runat="server" Text='<%#Eval("Level") %>' />
-        </td>
-			</tr>
-		</ItemTemplate>
-	</asp:ListView>--%>
-<%--	<div ng-controller="CharacterCtrl">
-		<div ng-init="LoadCharacters()"></div>
-	</div>--%>
   <script  src="<%=ResolveClientUrl("~/Scripts/controllers/charSelectionCtrl.js")%>" type="text/javascript"></script>
+
+	<h1>Dungeons & Dragons Character Sheet</h1>
+	<h2>Select Character</h2>
 
   <div ng-controller="CharSelectionCtrl">
     <table ng-init="LoadCharacters()">
