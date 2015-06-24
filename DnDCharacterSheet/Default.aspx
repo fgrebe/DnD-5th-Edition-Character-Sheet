@@ -16,5 +16,9 @@
       </tr>
     </table>
   </div>
+	
+	<p>
+		<a href="/char/new">New Character</a>
+	</p>
 
 </asp:Content>

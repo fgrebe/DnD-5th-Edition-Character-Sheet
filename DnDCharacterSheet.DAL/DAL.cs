@@ -30,6 +30,14 @@ namespace DnD.DataAccess
 			}
 		}
 
+		public static Class GetClass(int classId)
+		{
+			using (var context = new DALContext())
+			{
+				return context.Classes.FirstOrDefault(c => c.ClassId == classId);
+			}
+		}
+
     public static int AddClass(Class c) {
       using (var context = new DALContext()) {
         context.Classes.Add(c);

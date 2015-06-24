@@ -46,6 +46,10 @@
 				<td class="W100">{{character.AC}}</td>
 			</tr>
 			<tr>
+				<th>Proficiency Bonus</th>
+				<td>{{character.ProficiencyBonus}}</td>
+			</tr>
+			<tr>
 				<th>Initiative</th>
 				<td>{{character.Initiative}}</td>
 			</tr>

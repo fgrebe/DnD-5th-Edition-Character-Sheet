@@ -22,10 +22,11 @@ namespace DnD.InitializeDB {
       DAL.AddClass(new Class { Name = "Sorcerer", HitDie = DieEnum.d6 });
       DAL.AddClass(new Class { Name = "Paladin", HitDie = DieEnum.d10 });
       DAL.AddClass(new Class { Name = "Bard", HitDie = DieEnum.d8 });
-      Class c = new Class { Name = "Wizard", HitDie = DieEnum.d6 };
-      DAL.AddClass(c);
+      DAL.AddClass(new Class { Name = "Wizard", HitDie = DieEnum.d6 });
+			DAL.AddClass(new Class { Name = "Fighter", HitDie = DieEnum.d10 });
+	    DAL.AddClass(new Class {Name = "Monk", HitDie = DieEnum.d8});
 
-      Character ch = new Character(9, 16, 16, 18, 9, 9) {
+      Character ch = new Character(6, 9, 16, 16, 18, 9, 9) {
         Name = "Sola-Ui El-Melloi Archibald",
         TempHitpoints = 1,
         AC = 12,
@@ -37,7 +38,6 @@ namespace DnD.InitializeDB {
         Level = 1,
         Alignment = "Chaotic Good",
         Background = "Noble",
-        Class = c
       };
       ch.SetProficient(SkillsEnum.Arcana);
       ch.SetProficient(SkillsEnum.History); 
@@ -47,10 +47,7 @@ namespace DnD.InitializeDB {
 
       DAL.AddCharacters(ch);
 
-      c = new Class { Name = "Fighter", HitDie = DieEnum.d10 };
-      DAL.AddClass(c);
-
-      ch = new Character(16, 15, 14, 12, 9, 8) {
+      ch = new Character(7, 16, 15, 14, 12, 9, 8) {
         Name = "Sir Eiric of The Stone",
         TempHitpoints = 0,
         AC = 22,
@@ -61,8 +58,7 @@ namespace DnD.InitializeDB {
         Inventory = "Dragon Scale Shield, Longsword, Handaxe (x2), Warhammer, Man-O-War (Battleaxe)",
         Level = 1,
         Alignment = "Lawful Good",
-        Background = "Noble (Knight)",
-        Class = c
+        Background = "Noble (Knight)"
       };
       ch.SetProficient(SkillsEnum.Perception);
       ch.SetProficient(SkillsEnum.Athletics);
@@ -72,10 +68,7 @@ namespace DnD.InitializeDB {
 
       DAL.AddCharacters(ch);
 
-      c = new Class { Name = "Monk", HitDie = DieEnum.d8 };
-      DAL.AddClass(c);
-
-      ch = new Character(9, 16, 16, 18, 9, 9) {
+      ch = new Character(8, 9, 16, 16, 18, 9, 9) {
         Name = "Nemesis",
         TempHitpoints = 1,
         AC = 16,
@@ -87,7 +80,6 @@ namespace DnD.InitializeDB {
         Level = 1,
         Alignment = "Lawful Neutral",
         Background = "???",
-        Class = c
       };
       ch.SetProficient(SkillsEnum.Arcana);
       ch.SetProficient(SkillsEnum.History);

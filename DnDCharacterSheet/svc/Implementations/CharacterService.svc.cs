@@ -19,6 +19,25 @@ namespace DnD.CharacterSheet.Services
 			return CreateReponse(DAL.GetCharacter(characterId));
 		}
 
+		public SvcResponse<NewCharacterResponse> AddCharacter(string characterName, string playerName, string race, int classId, string alignment, string background, int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma)
+		{
+			var c = new Character(classId, strength, dexterity, constitution, intelligence, wisdom, charisma)
+			{
+				Name = characterName,
+				PlayerName = playerName,
+				Race = race,
+				Alignment = alignment,
+				Background = background,
+				Speed = 30
+			};
+
+			c.AC = c.Abilities.Dexterity.Modifier;
+
+			DAL.AddCharacters(c);
+			
+			return CreateReponse(new NewCharacterResponse{ CharacterId = c.CharacterId });
+		}
+
 		public SvcResponse<List<Class>> GetClasses()
 		{
 			var classes = DAL.GetClasses().ToList();

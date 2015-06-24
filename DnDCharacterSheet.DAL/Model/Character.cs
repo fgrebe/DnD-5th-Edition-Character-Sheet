@@ -11,6 +11,7 @@ namespace DnD.DataAccess.Model
 		public int CharacterId { get; set; }
 		public string Name { get; set; }
 		public int Level { get; set; }
+		public string Race { get; set; }
     public int AC { get; set; }
     public int Speed { get; set; }
     public int Initiative { get; set; }
@@ -43,8 +44,12 @@ namespace DnD.DataAccess.Model
 
     public Character() { }
 
-		public Character(int s, int d, int c, int i, int w, int ch)
+		public Character(int classId, int s, int d, int c, int i, int w, int ch)
 		{
+			Level = 1;
+			ClassId = classId;
+			Class = DAL.GetClass(classId);
+
       Ability strength = new Ability(s, "Strength");
       Ability dexterity = new Ability(d, "Dexterity");
       Ability constitution = new Ability(c, "Constitution");
@@ -82,6 +87,8 @@ namespace DnD.DataAccess.Model
       Skills.Add(new Skill { Name = SkillsEnum.Survival.ToName(), Proficient = false, Related = wisdom });
       
       CalculateProficiencyBouns();
+			CalculateHitpoints();
+			IncreaseHitDice();
 		}
 
     public void SetProficient(SkillsEnum skill, bool proficient = true) {

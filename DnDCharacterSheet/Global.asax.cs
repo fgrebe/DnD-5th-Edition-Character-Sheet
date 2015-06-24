@@ -1,13 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ServiceModel.Activation;
+using System.Web;
 using System.Web.Routing;
-
 using DnD.CharacterSheet.Services;
 
 namespace DnD.CharacterSheet
 {
-	public class Global : System.Web.HttpApplication
+	public class Global : HttpApplication
 	{
 
 		protected void Application_Start(object sender, EventArgs e)
@@ -49,6 +48,7 @@ namespace DnD.CharacterSheet
 
 		private static void RegisterPageRoutes(RouteCollection routes)
 		{
+			routes.MapPageRoute("NewCharacter", "char/new", "~/Pages/NewCharacter.aspx");
 			routes.MapPageRoute("CharacterSheet", "char/{characterId}", "~/Pages/CharacterSheet.aspx");
 		}
 

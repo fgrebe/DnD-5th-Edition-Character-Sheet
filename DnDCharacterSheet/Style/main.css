@@ -60,7 +60,7 @@ div.mainContent h2 {
 	padding: 0px;
 }
 
-div.mainContent input[type=text]{
+div.mainContent input[type=text], select, option{
 	padding: 2px;
 
 	background-color: #FFEBD1;

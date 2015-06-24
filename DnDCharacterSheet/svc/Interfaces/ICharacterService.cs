@@ -15,7 +15,10 @@ namespace DnD.CharacterSheet.Services
     [OperationContract]
     SvcResponse<Character> GetCharacter(int characterId);
 
-    [OperationContract]
+	  [OperationContract]
+	  SvcResponse<NewCharacterResponse> AddCharacter(string characterName, string playerName, string race, int classId, string alignment, string background, int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma);
+		
+		[OperationContract]
     SvcResponse<List<Class>> GetClasses();
 
     [OperationContract]
